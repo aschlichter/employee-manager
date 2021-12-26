@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Setter
 @ToString
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Entity
 public class Employee implements Serializable {
     @Id
