@@ -12,6 +12,7 @@ import java.util.List;
  * Created by adam on 2021. 12. 27.
  */
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/employee")
 public class EmployeeResource {
     private final EmployeeService employeeService;
