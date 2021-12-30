@@ -6,6 +6,7 @@ import com.example.employeemanager.repo.EmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.UUID;
 
@@ -13,6 +14,7 @@ import java.util.UUID;
  * Created by adam on 2021. 12. 26.
  */
 @Service
+@Transactional
 public class EmployeeService {
     private final EmployeeRepo employeeRepo;
 
@@ -36,7 +38,7 @@ public class EmployeeService {
 
     public Employee findEmployeeById(Long id) {
         return employeeRepo.findEmployeeById(id)
-                .orElseThrow(() -> new UserNotFoundException("User by id " + id + "not found"));
+                .orElseThrow(() -> new UserNotFoundException("User by id " + id + " was not found"));
     }
 
     public void deleteEmployee(Long id) {
